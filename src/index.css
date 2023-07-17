@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://i.ibb.co/TcxzRLN/bg-1.png");
+  background-size: cover;
+  margin: 20px auto;
+}
+
+:root {
+  --bg-primary: #fff;
+  --subtitle-color: #777;
+  --copyright-color: #a8a8a8;
+  --bg-dot: #ffc500;
+  --primary-hover-color: #ddad0f;
+  --icon-color: #000;
+  --connector-color: #eee;
+  --link-color: #787878;
+}
+
+.container-shadow{
+  box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+}
+
+/*  Fonts Style  */
+.text-uppercase {text-transform: uppercase;}
+.text-capitalize {text-transform: capitalize;}
+
+/* Image Style */
+img {
+  width: 100%;
+}
+
+/* Timeline Style */
+.MuiTimelineItem-missingOppositeContent::before{
+  display: none !important;
+}
+
+.MuiTimelineContent-root{
+  padding-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+.MuiTimelineConnector-root{
+  background-color: var(--connector-color) !important;
+  min-height: 10px !important;
+}
+
+.MuiTimelineItem-root{
+  min-height: 2px !important;
+}
+
+.MuiTimeline-root{
+  margin-top: -30px;
+}
+
+.css-18y2uza-MuiTypography-root-MuiTimelineContent-root{
+  padding: 0px 0px 0px 16px !important;
+}
+
+.css-ahj2mt-MuiTypography-root{
+  padding-bottom: 0px !important;
+}
+
+.MuiTypography-root{
+  margin-bottom: 0 !important;
+}
+
+/* Navbar Styled */
+.MuiPaper-root{
+  background-color: var(--bg-primary) !important;
+  box-shadow: none !important;
+  border-radius: 6px;
+  height: 60px !important;
+  overflow: hidden;
+}
+.MuiToolbar-root{
+  padding: 0 !important;
+}
+.MuiButtonBase-root{
+  color: var(--icon-color) !important;
+  margin: 10px !important;
+}
+
+/* HomePage Icon */
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+  border-radius: 0 !important;
+}
+.MuiButtonBase-root{
+  margin: 0 !important;
+}
+
+/* Pages */
+.header-link{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  color: var(--icon-color);
+}
+.active,
+.header-link:hover{
+  color: var(--bg-dot) !important;
+}
+
