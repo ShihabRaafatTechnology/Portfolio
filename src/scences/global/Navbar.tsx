@@ -11,7 +11,7 @@ import resumeData from "../../utils/resumeData";
 import CustomeButton from "../../components/button/CustomeButton";
 
 const Navbar = () => {
-  const pages = ["resume", "portfolio", "Blog", "contact"];
+  const pages = ["resume", "portfolio"];
   const { socials } = resumeData;
 
   return (
@@ -38,7 +38,7 @@ const Navbar = () => {
             sx={{
               flexGrow: 5,
               display: { xs: "none", md: "flex" },
-              justifyContent: "space-around",
+              fontFamily: "'Heebo', sans-serif",
             }}
           >
             {pages.map((page, index) => (
@@ -46,6 +46,7 @@ const Navbar = () => {
                 to={`/${page}`}
                 className={"header-link"}
                 key={index}
+                style={{fontSize: "12.5px", marginLeft: "20px"}}
               >
                 {page}
               </NavLink>

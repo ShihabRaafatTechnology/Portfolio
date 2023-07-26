@@ -11,7 +11,6 @@ import CustomeButton from "../../components/button/CustomeButton";
 import { BiSolidDownload } from "react-icons/bi";
 import styled from "styled-components";
 
-
 type CustomeTimelineItemProps = {
   text: string;
   title: string;
@@ -33,8 +32,8 @@ const CustomeTimelineItem = ({
         {link ? (
           <Typography
             sx={{
-              fontSize: {xs: "12.5px", md: "11px"},
-              marginTop: "16px",
+              fontSize: { xs: "12.5px", md: "11px" },
+              marginTop: "16.5px",
             }}
           >
             <Info>
@@ -58,7 +57,7 @@ const CustomeTimelineItem = ({
           <Typography
             sx={{
               paddingTop: "5px",
-              fontSize: {xs: "12.5px", md: "11px"},
+              fontSize: { xs: "12.5px", md: "11px" },
               marginTop: "12px",
             }}
           >
@@ -87,7 +86,6 @@ const Sidebar = () => {
       style={{
         backgroundColor: "var(--bg-primary)",
         borderRadius: "6px",
-        height: "100%",
       }}
     >
       <Box
@@ -125,12 +123,11 @@ const Sidebar = () => {
         <img
           src="https://i.ibb.co/GVKFqZq/img-portfolio.jpg"
           alt="shihab raafat"
-         
         />
       </Box>
 
-      <Box className="profile-information">
-        <CustomeTimeline icon={<IoGlasses />} />
+      <Box>
+        <CustomeTimeline title="" icon={<IoGlasses />} children={undefined}></CustomeTimeline>
         <CustomeTimelineItem title="Name" text={name} link="" />
         <CustomeTimelineItem title="Job" text={job} link="" />
         <CustomeTimelineItem title="Email" text={email} link="" />
@@ -149,6 +146,7 @@ const Sidebar = () => {
           display: "flex",
           justifyContent: "center",
           margin: "20px 0",
+          paddingBottom: "25px",
         }}
       >
         <a
@@ -157,7 +155,7 @@ const Sidebar = () => {
           rel="noreferrer"
           style={{ textDecoration: "none" }}
         >
-          <CustomeButton  text={"Download CV"} icon={<BiSolidDownload />} />
+          <CustomeButton text={"Download CV"} icon={<BiSolidDownload />} />
         </a>
       </Box>
     </Box>

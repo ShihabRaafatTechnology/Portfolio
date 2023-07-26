@@ -19,7 +19,7 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} All rights reserved. Designed by
         <a href="https://github.com/ShihabRaafatTechnology" style={{
           textDecoration: "none",
-          color: "var(--bg-primary)",
+          color: "var(--bg-dot)",
           marginLeft: "5px",
         }}>ShihabRaafatTechnology</a>
       </Typography>

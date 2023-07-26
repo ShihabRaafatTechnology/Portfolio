@@ -4,9 +4,13 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineDot from "@mui/lab/TimelineDot";
+import { TimelineContent } from "@mui/lab";
+import { Typography } from "@mui/material";
 
 type CustomeTimelineProps = {
   icon: JSX.Element;
+  title: string;
+  children: React.ReactNode;
 };
 
 export const CustomeTimelineSeparator = () => (
@@ -15,7 +19,7 @@ export const CustomeTimelineSeparator = () => (
       paddingLeft: "24px",
     }}
   >
-          <TimelineConnector/>
+    <TimelineConnector />
     <TimelineDot
       variant="outlined"
       style={{
@@ -27,7 +31,11 @@ export const CustomeTimelineSeparator = () => (
   </TimelineSeparator>
 );
 
-const CustomeTimeline: React.FC<CustomeTimelineProps> = ({ icon }) => {
+const CustomeTimeline: React.FC<CustomeTimelineProps> = ({
+  title,
+  icon,
+  children,
+}) => {
   return (
     <Timeline
       style={{
@@ -36,9 +44,11 @@ const CustomeTimeline: React.FC<CustomeTimelineProps> = ({ icon }) => {
     >
       {/* Item Header */}
       <TimelineItem
-       style={{
-        margin:"-8px 0 0 12px"
-       }}
+        style={{
+          margin: "-8px 0 0 11px",
+          alignItems: "center",
+          textTransform: "capitalize",
+        }}
       >
         <TimelineSeparator>
           <TimelineDot
@@ -46,13 +56,22 @@ const CustomeTimeline: React.FC<CustomeTimelineProps> = ({ icon }) => {
               color: "var(--icon-color)",
               backgroundColor: "var(--bg-dot)",
               fontSize: "20px",
-              padding: "4px",
+              padding: "6px",
             }}
           >
             {icon}
           </TimelineDot>
         </TimelineSeparator>
+        <TimelineContent>
+          <Typography
+            variant="h6"
+            style={{ fontFamily: "'Heebo', sans-serif" }}
+          >
+            {title}
+          </Typography>
+        </TimelineContent>
       </TimelineItem>
+      {children}
     </Timeline>
   );
 };
