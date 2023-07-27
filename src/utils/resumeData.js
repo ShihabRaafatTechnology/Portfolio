@@ -81,22 +81,25 @@ export default {
     {
       title: "web development",
       describe:
-        "I have at least 3 years of experience in building and maintaining sites and have designed projects for companies before.",
+        "I have been working on web development for 4 years.",
       icon: <CgWebsite />,
     },
     {
       title: "banking advice",
       describe:
-        "I have a lot of experience from one of the huge banks and I am currently working in the National Bank of Egypt for more than two years.",
+        "I am working in the National Bank of Egypt for more than two years.",
       icon: <BiSolidBank />,
     },
   ],
   skills: [{
-    title: "frontend developer",
-    description: ["ReactJS", "JavaScript", "Typescript", "Material UI"]
+    title: "front-end",
+    description: ["React JS", "JavaScript", "TypeScript", "Material UI", "SEO"]
   },{
-    title: "backend developer",
-    description: ["NodeJS"]
+    title: "back-end",
+    description: ["Node JS"]
+  },{
+    title: "database",
+    description: ["MongoDB"]
   },{
     title: "source control",
     description: ["Git", "GitHub"]

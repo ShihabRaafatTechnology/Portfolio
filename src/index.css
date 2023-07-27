@@ -19,6 +19,7 @@ body {
   --primary-hover-color: #ddad0f;
   --icon-color: #000;
   --connector-color: #eee;
+  --bg-service: #fafafa;
   --link-color: #787878;
   --service-color: darkslategray;
 }
