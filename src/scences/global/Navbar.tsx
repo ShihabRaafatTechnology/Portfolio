@@ -1,9 +1,11 @@
-import * as React from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { Link, NavLink } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -14,17 +16,27 @@ const Navbar = () => {
   const pages = ["resume", "contact"];
   const { socials } = resumeData;
 
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }} className="container-shadow">
-      <AppBar position="static">
+      <AppBar position="static" style={{ overflow: "hidden" }}>
         <Toolbar>
           {/* Homepage Icon */}
-          <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ mr: 2 }}>
             <NavLink to="/">
               <IconButton
                 style={{
                   backgroundColor: "var(--bg-dot)",
-                  padding: "22px 25px",
+                  height: "100px",
+                  width: "70px",
                   fontSize: "20.5px",
                 }}
               >
@@ -53,7 +65,7 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 5 }} />
+          <Box sx={{ flexGrow: { xs: 12, md: 5 } }} />
           {/* Icons */}
           {Object.keys(socials).map((key, index) => (
             <IconButton
@@ -76,21 +88,54 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0.5 }} />
 
           {/* Hire Me Button */}
-          <Link to="mailto:shihabraafat7@gmail.com" style={{textDecoration: "none"}}>
-            <CustomeButton text="HIRE ME" icon={<FaTelegramPlane />} />
-          </Link>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Link
+              to="mailto:shihabraafat7@gmail.com"
+              style={{ textDecoration: "none" }}
+            >
+              <CustomeButton text="HIRE ME" icon={<FaTelegramPlane />} />
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 0.5 }} />
 
           {/* Menu */}
           <IconButton
             size="large"
-            edge="start"
-            color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2, display: { xs: "flex", md: "none" } }}
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
           >
             <MenuIcon />
           </IconButton>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+            style={{marginTop: 15,}}
+          >
+            {pages.map((page, index) => (
+              <NavLink
+                to={`/${page}`}
+                className={"header-link"}
+                style={{
+                  fontSize: "12.5px",
+                  margin: "20px 0 20px 0",
+                }}
+                key={index}
+                onClick={handleClose}
+              >
+                <MenuItem style={{display: "flex", flexDirection: "column"}}>{page}</MenuItem>
+              </NavLink>
+            ))}
+          </Menu>
         </Toolbar>
       </AppBar>
     </Box>

@@ -90,6 +90,13 @@ img {
   color: var(--icon-color) !important;
   margin: 10px !important;
 }
+.MuiMenu-paper{
+  height: 18% !important;
+  width: 100% !important;
+}
+.uiMenuItem-root{
+  margin-top: 200px !important;
+}
 
 /* HomePage Icon */
 .css-78trlr-MuiButtonBase-root-MuiIconButton-root{
