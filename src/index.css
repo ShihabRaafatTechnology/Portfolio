@@ -12,6 +12,7 @@ body {
 
 :root {
   --bg-primary: #fff;
+  --secindary-color: #217bd4;
   --subtitle-color: #777;
   --copyright-color: #a8a8a8;
   --dialog-color: #696868;
@@ -91,11 +92,14 @@ img {
   margin: 10px !important;
 }
 .MuiMenu-paper{
-  height: 18% !important;
+  height: 25% !important;
   width: 100% !important;
 }
 .uiMenuItem-root{
   margin-top: 200px !important;
+}
+.css-1yxmbwk{
+  border-radius: 0% !important;
 }
 
 /* HomePage Icon */

@@ -6,6 +6,7 @@ import { Container, Grid, Box } from "@mui/material";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Footer from "./scences/global/Footer";
 import Home from "./scences/pages/home/Home";
+import Portfolio from "./scences/pages/portfolio/Portfolio";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/" element={<Home/>} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/portfolio" element={<Portfolio/>} />
               </Routes>
             </Box>
           </BrowserRouter>

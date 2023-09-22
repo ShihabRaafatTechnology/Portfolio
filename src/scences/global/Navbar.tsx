@@ -13,7 +13,7 @@ import resumeData from "../../utils/resumeData";
 import CustomeButton from "../../components/button/CustomeButton";
 
 const Navbar = () => {
-  const pages = ["resume", "contact"];
+  const pages = ["resume", "portfolio", "contact"];
   const { socials } = resumeData;
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -72,6 +72,7 @@ const Navbar = () => {
               key={index}
               sx={{
                 fontSize: "16px",
+                display: {xs: "none", lg: "flex"}
               }}
             >
               <a
@@ -88,14 +89,12 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0.5 }} />
 
           {/* Hire Me Button */}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link
               to="mailto:shihabraafat7@gmail.com"
               style={{ textDecoration: "none" }}
             >
               <CustomeButton text="HIRE ME" icon={<FaTelegramPlane />} />
             </Link>
-          </Box>
           <Box sx={{ flexGrow: 0.5 }} />
 
           {/* Menu */}
@@ -119,7 +118,7 @@ const Navbar = () => {
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
-            style={{marginTop: 15,}}
+            style={{ marginTop: 15 }}
           >
             {pages.map((page, index) => (
               <NavLink
@@ -132,7 +131,9 @@ const Navbar = () => {
                 key={index}
                 onClick={handleClose}
               >
-                <MenuItem style={{display: "flex", flexDirection: "column"}}>{page}</MenuItem>
+                <MenuItem style={{ display: "flex", flexDirection: "column" }}>
+                  {page}
+                </MenuItem>
               </NavLink>
             ))}
           </Menu>
